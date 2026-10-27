@@ -1,3 +1,5 @@
+![Platform](https://img.shields.io/badge/platform-Web-blue)
+![Requires](https://img.shields.io/badge/requires-modern%20browser-blue)
 [![License](https://img.shields.io/badge/license-GPLv3-green)](LICENSE)
 
 const repos = [
