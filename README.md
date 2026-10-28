@@ -46,7 +46,7 @@ The tests check that local files and in-page links exist, ids are unique, extern
 
 ## ✍️ Content
 
-The biography follows Carlos's existing self-description in the Swift livery catalogue. Project descriptions come from the previous portfolio and repository documentation. The graphical badges and cassette are original decorative illustrations, not product screenshots.
+The biography follows Carlos's existing self-description in the Swift livery catalogue. Project descriptions come from the previous portfolio and repository documentation. The graphical badges and window-snapping screen are original decorative illustrations, not product screenshots.
 
 ## 🚀 Deployment
 

@@ -449,59 +449,57 @@ h2 {
   text-shadow:6px 7px #171811;
 }
 
-.tape-art {
-  background:repeating-linear-gradient(0deg,#ffffff02 0 1px,transparent 1px 4px),linear-gradient(130deg,#343546,#242623 65%);
+.snap-art {
+  background:repeating-linear-gradient(0deg,#ffffff02 0 1px,transparent 1px 4px),linear-gradient(130deg,#2c3934,#22251f 65%);
 }
 
-.cassette {
-  width:280px;
-  background:#151614;
+.screen {
+  width:min(280px,82%);
+  height:170px;
+  position:relative;
+  background:linear-gradient(90deg,transparent calc(50% - 1px),#4e5045 0 calc(50% + 1px),transparent 0),linear-gradient(0deg,transparent calc(50% - 1px),#4e5045 0 calc(50% + 1px),transparent 0),#151614;
   border:2px solid #4e5045;
   border-radius:8px;
   box-shadow:12px 15px 0 #0003;
-  transform:rotate(-7deg);
-  padding:14px 18px 8px;
+  transform:rotate(-5deg);
 }
 
-.tape-label {
+.snap-window {
+  position:absolute;
+  inset:9px calc(50% + 4px) 9px 9px;
   background:#d8d7c8;
-  border-left:12px solid #c66e49;
+  border-top:12px solid var(--yellow);
   color:#25251e;
   display:flex;
+  flex-direction:column;
   justify-content:space-between;
-  align-items:center;
-  padding:5px 10px;
-  font-size:23px;
+  padding:10px 8px;
+  font-size:clamp(14px,4.6vw,19px);
   font-weight:900;
   font-style:italic;
 }
 
-.tape-label small {
+.snap-window small {
   font:8px var(--mono);
 }
 
-.reels {
-  display:flex;
-  align-items:center;
-  justify-content:space-around;
-  padding:13px 6px;
-  color:#727468;
+.snap-ghost {
+  position:absolute;
+  top:22%;
+  left:63%;
+  width:30%;
+  height:52%;
+  border:1px dashed #9b9e91;
 }
 
-.reels i {
-  width:43px;
-  height:43px;
-  border:8px dashed #9b9e91;
-  border-radius:50%;
-  background:#272a22;
-  outline:3px solid #44483c;
-}
-
-.tape-base {
-  font:7px var(--mono);
-  letter-spacing:2px;
-  text-align:center;
-  color:#aaa99a;
+.snap-ghost:before {
+  content:"";
+  position:absolute;
+  right:calc(100% + 5px);
+  top:25%;
+  width:16px;
+  height:50%;
+  background:repeating-linear-gradient(0deg,#9b9e91 0 1px,transparent 1px 9px);
 }
 
 .feature-copy {
@@ -993,6 +991,9 @@ h2 {
   }
   .feature-art {
     height:250px;
+  }
+  .screen {
+    height:145px;
   }
   .feature-copy {
     padding:24px;
