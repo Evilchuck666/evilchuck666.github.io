@@ -50,39 +50,7 @@ The biography follows Carlos's existing self-description in the Swift livery cat
 
 ## 🚀 Deployment
 
-GitHub Pages serves `main`. The workshop redesign was integrated from `redesign/personal-workshop`. Preview future changes locally before publishing them.
-
-## 💾 Backup and rollback
-
-The original `main` is preserved at:
-
-- Branch: `backup/main-before-redesign-2026-10-28`
-- Commit: `8663375fb0807dbf83a149b65febb568f0c34398`
-- Independent Git bundle, outside the website: `../evilchuck666-main-2026-10-28.bundle`
-
-The bundle contains the complete original `main` history and was verified with `git bundle verify`. The backup branch is also available on GitHub. The independent bundle remains local.
-
-To inspect the old site, first commit or stash any unfinished edits, then:
-
-```sh
-git switch backup/main-before-redesign-2026-10-28
-```
-
-If the redesign is later merged, restore the previous tracked site files without rewriting history (start with a clean working tree):
-
-```sh
-git switch main
-git restore --source=backup/main-before-redesign-2026-10-28 --staged --worktree -- .
-git commit -m "Restore portfolio before workshop redesign"
-```
-
-Push that restoration commit only when ready to republish it.
-
-To recover the old repository independently:
-
-```sh
-git clone ../evilchuck666-main-2026-10-28.bundle ../evilchuck666-original
-```
+GitHub Pages serves `main`. Preview future changes locally before publishing them.
 
 ## 📜 License
 
