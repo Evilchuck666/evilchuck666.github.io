@@ -239,6 +239,10 @@ img {
   margin-left: 16px;
 }
 
+.result span {
+  white-space: nowrap;
+}
+
 .section {
   padding: 90px 0;
 }
@@ -375,6 +379,7 @@ img {
 .repo-link {
   color: var(--accent);
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .stack-grid {
@@ -430,6 +435,10 @@ img {
 
   .hero-inner {
     padding-top: 30px;
+  }
+
+  .terminal {
+    font-size: 0.85rem;
   }
 
   .inline-title,
