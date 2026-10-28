@@ -1,0 +1,33 @@
+name: Build and tests
+
+# Pushes and pull requests check the JavaScript syntax and run the static site
+# tests in tests/ (links, ids, filters and the project catalogue).
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    name: Check site
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Check JavaScript syntax
+        run: node --check script.js
+
+      - name: Run site tests
+        run: python3 -m unittest discover -v tests
