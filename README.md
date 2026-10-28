@@ -1,5 +1,12 @@
 # Evilchuck666 — The personal workshop
 
+![Platform](https://img.shields.io/badge/platform-Web-blue)
+![HTML](https://img.shields.io/badge/HTML-5-blue)
+![CSS](https://img.shields.io/badge/CSS-3-blue)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES2015-blue)
+![Requires](https://img.shields.io/badge/requires-modern%20browser-blue)
+[![License](https://img.shields.io/badge/license-GPLv3-green)](LICENSE)
+
 Personal website for Carlos Martínez: backend development, classic games, video tools and the Suifuto Remon automotive project.
 
 Built with HTML, CSS and a small JavaScript enhancement. No framework, build step, external fonts, analytics or runtime dependencies. All twelve project entries are in the HTML and remain available without JavaScript.
