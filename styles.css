@@ -167,6 +167,10 @@ a:hover {
   font-size:12px;
 }
 
+.site-header nav a {
+  white-space:nowrap;
+}
+
 .github-link {
   border:1px solid var(--line);
   padding:9px 16px;
@@ -174,6 +178,10 @@ a:hover {
 
 .github-link span {
   margin-left:16px;
+}
+
+.github-link+.github-link {
+  margin-left:-18px;
 }
 
 .hero {
@@ -896,13 +904,23 @@ h2 {
     font-size:7px;
   }
   .site-header nav {
-    gap:22px;
+    flex-wrap:wrap;
+    gap:10px 12px;
     font-size:11px;
     width:100%;
     justify-content:space-between;
   }
   .github-link {
-    padding:6px 12px;
+    padding:6px 10px;
+  }
+  .github-link span {
+    margin-left:8px;
+  }
+  .github-link {
+    margin-left:auto;
+  }
+  .github-link+.github-link {
+    margin-left:0;
   }
   .hero {
     grid-template-columns:1fr;
