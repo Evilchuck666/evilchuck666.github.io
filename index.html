@@ -1,181 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Evilchuck666's portfolio: projects, tools and repositories on GitHub."
-    />
-    <title>Evilchuck666 | GitHub Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="hero">
-      <nav class="topbar container">
-        <div class="brand">
-          <span class="brand-mark">EC</span>
-          <span>Evilchuck666</span>
-        </div>
-        <div class="nav-links">
-          <a href="#about">About</a>
-          <a href="#projects">Repositories</a>
-          <a href="#stack">Stack</a>
-          <a href="https://github.com/Evilchuck666" target="_blank" rel="noreferrer">GitHub</a>
-        </div>
-      </nav>
-
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <p class="eyebrow">Project portfolio</p>
-          <h1>I build tools, automations and digital experiences.</h1>
-          <p class="lead">
-            I'm Evilchuck666, and this is a look at my repositories, personal projects
-            and utilities built with Python, graphical interfaces and automation.
-          </p>
-
-          <div class="cta-row">
-            <a class="btn btn-primary" href="https://github.com/Evilchuck666" target="_blank" rel="noreferrer">
-              View GitHub
-            </a>
-            <a class="btn btn-secondary" href="#projects">Explore repos</a>
-          </div>
-
-          <ul class="stats">
-            <li><strong>13</strong><span>public repositories</span></li>
-            <li><strong>Python</strong><span>main language</span></li>
-            <li><strong>GUI</strong><span>and automation</span></li>
-          </ul>
-        </div>
-
-        <div class="hero-card">
-          <div class="card-window">
-            <div class="traffic-lights">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <div class="terminal">
-              <p><span class="prompt">$</span> whoami</p>
-              <p class="result">Evilchuck666</p>
-              <p><span class="prompt">$</span> ls projects</p>
-              <p class="result">
-                <span>QuakeDock,</span> <span>ArenaHub,</span> <span>PyVideoKit,</span>
-                <span>PyVideoKit-CLI,</span> <span>PyVideoKit-GUI,</span> <span>PyVideoKit-Libs,</span>
-                <span>VHSify,</span> <span>WinJitsu,</span> <span>KlondikeCLI,</span>
-                <span>MyReisinLapTimes,</span> <span>hide-scrollbar-youtube-firefox,</span>
-                <span>swift-livery-catalog</span>
-              </p>
-            </div>
-          </div>
-        </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#161715">
+  <meta name="description" content="Carlos Martínez, aka Evilchuck666. Backend developer, toolmaker and Suzuki Swift enthusiast. A personal workshop for code, classic games and analogue video.">
+  <meta property="og:title" content="Evilchuck666 — The personal workshop">
+  <meta property="og:description" content="Code. Play. Drive. Projects by Carlos Martínez, built out of curiosity.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://evilchuck666.github.io/">
+  <title>Evilchuck666 — The personal workshop</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header wrap">
+    <a class="brand" href="#" aria-label="Evilchuck666 home"><span class="brand-mark" aria-hidden="true">ec<span>↗</span></span><span>EVILCHUCK<span class="accent">666</span><small>CARLOS MARTÍNEZ / PERSONAL WORKSHOP</small></span></a>
+    <nav aria-label="Main navigation">
+      <a href="#projects">Projects</a><a href="#about">The person</a><a class="github-link" href="https://github.com/Evilchuck666">GitHub <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> CODE. PLAY. DRIVE.</p>
+        <h1 id="hero-title">Built out of<br><em>curiosity.</em></h1>
+        <p class="hero-intro">I'm Carlos. Online, <strong>Evilchuck666.</strong><br>Backend developer. Maker of useful tools.<br>Always finding something to fine-tune.</p>
+        <div class="hero-actions"><a class="button" href="#projects">Explore the workshop <span aria-hidden="true">↘</span></a><a class="quiet-link" href="#about">A little about me <span aria-hidden="true">↗</span></a></div>
       </div>
-    </header>
-
-    <main>
-      <section id="about" class="section container">
-        <div class="section-title">
-          <p class="eyebrow">About me</p>
-          <h2>I love building useful, fun software.</h2>
-        </div>
-
-        <div class="about-grid">
-          <div class="about-card">
-            <h3>What I do</h3>
-            <p>
-              I develop personal projects focused on cross-platform tools, automation,
-              multimedia, application launchers and functional UX.
-            </p>
-          </div>
-          <div class="about-card">
-            <h3>How I work</h3>
-            <p>
-              I combine Python with graphical interfaces, automation and scripting to build
-              practical, easy-to-use tools.
-            </p>
-          </div>
-          <div class="about-card">
-            <h3>Interests</h3>
-            <p>
-              Gaming, system tools, video, performance, scripting and software projects
-              with a real impact on everyday life.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="projects" class="section section-alt">
-        <div class="container">
-          <div class="section-title inline-title">
-            <div>
-              <p class="eyebrow">Repositories</p>
-              <h2>Featured projects</h2>
-            </div>
-            <a class="text-link" href="https://github.com/Evilchuck666?tab=repositories" target="_blank" rel="noreferrer">
-              View all →
-            </a>
-          </div>
-
-          <div id="repo-grid" class="repo-grid" aria-live="polite"></div>
-        </div>
-      </section>
-
-      <section id="stack" class="section container">
-        <div class="section-title">
-          <p class="eyebrow">Stack</p>
-          <h2>Tools and technologies</h2>
-        </div>
-
-        <div class="stack-grid">
-          <div class="stack-card">
-            <span class="stack-tag">Python</span>
-            <p>Utilities, automation and packages published on PyPI and the AUR.</p>
-          </div>
-          <div class="stack-card">
-            <span class="stack-tag">PySide6</span>
-            <p>Graphical interfaces and desktop applications.</p>
-          </div>
-          <div class="stack-card">
-            <span class="stack-tag">FFmpeg and SoX</span>
-            <p>Video and audio processing, and multimedia effects.</p>
-          </div>
-          <div class="stack-card">
-            <span class="stack-tag">C++</span>
-            <p>Cross-platform terminal applications with CMake.</p>
-          </div>
-          <div class="stack-card">
-            <span class="stack-tag">C# and .NET</span>
-            <p>Windows desktop applications with WinForms.</p>
-          </div>
-          <div class="stack-card">
-            <span class="stack-tag">Bash and PowerShell</span>
-            <p>Cross-platform scripts for GNU/Linux, macOS and Windows.</p>
-          </div>
-          <div class="stack-card">
-            <span class="stack-tag">JavaScript</span>
-            <p>Static websites and Firefox add-ons.</p>
-          </div>
-          <div class="stack-card">
-            <span class="stack-tag">GitHub</span>
-            <p>Actions for builds, tests and releases; Pages for this website.</p>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <p>© 2026 Evilchuck666</p>
-        <a href="https://github.com/Evilchuck666" target="_blank" rel="noreferrer">GitHub</a>
+      <div class="workshop-art" role="img" aria-label="Graphic workshop badge: EC 666, surrounded by technical rings and the words code, play, drive">
+        <div class="art-top mono"><span>EC / PERSONAL SERIES</span><span>NO. 001</span></div>
+        <svg class="dial" viewBox="0 0 500 500" aria-hidden="true">
+          <defs><pattern id="grid" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="#36382f" stroke-width=".6"/></pattern></defs>
+          <rect width="500" height="500" fill="url(#grid)"/>
+          <g fill="none" stroke="#525548"><circle cx="250" cy="250" r="204" stroke-dasharray="1 9" stroke-width="9"/><circle cx="250" cy="250" r="184"/><circle cx="250" cy="250" r="158" stroke-dasharray="5 9"/><path d="M250 25V85M250 415V475M25 250H85M415 250H475"/></g>
+          <g fill="none" stroke="#e9d34d" stroke-width="9"><path d="M95 150A185 185 0 0 1 270 66"/><path d="M405 350A185 185 0 0 1 230 434"/></g>
+          <g fill="#e9d34d"><path d="m326 85 22 9-17 17Z"/><path d="m174 415-22-9 17-17Z"/></g>
+          <text x="250" y="266" text-anchor="middle" fill="#f0eee5" font-family="Arial, sans-serif" font-size="150" font-weight="900" letter-spacing="-12">EC</text>
+          <text x="250" y="319" text-anchor="middle" fill="#e9d34d" font-family="monospace" font-size="27" letter-spacing="16">666</text>
+          <g fill="#b0b3a4" font-family="monospace" font-size="10" letter-spacing="2"><text x="250" y="119" text-anchor="middle">UNDERSTAND / ADJUST / IMPROVE</text><text x="250" y="385" text-anchor="middle">BUILT WITH INTENT</text></g>
+        </svg>
+        <div class="art-bottom mono"><span>CODE <b>×</b> PLAY <b>×</b> DRIVE</span><span class="accent">↗</span></div>
       </div>
-    </footer>
-
-    <script src="script.js"></script>
-  </body>
+      <div class="hero-foot mono"><span>BACKEND ROOTS. HANDS-ON PROJECTS.</span><span>SCROLL TO LOOK AROUND ↓</span></div>
+    </section>
+    <div class="interest-strip" aria-label="Interests"><div class="wrap"><span>Backend development</span><b aria-hidden="true">✳</b><span>Classic FPS</span><b aria-hidden="true">✳</b><span>Analogue texture</span><b aria-hidden="true">✳</b><span>Japanese automotive design</span></div></div>
+    <section id="projects" class="section wrap" aria-labelledby="projects-title">
+      <div class="section-heading"><div><p class="eyebrow">01 / THE WORKSHOP</p><h2 id="projects-title">Things I wanted.<br>Things I built.</h2></div><p>From getting Quake running to giving a video that worn-out tape feeling. Practical projects with a personal reason behind them.</p></div>
+      <div class="featured-grid">
+        <article class="feature feature-quake">
+          <div class="feature-art quake-art" aria-hidden="true"><span class="art-label">01 / BACK TO THE ARENA</span><div class="crosshair"><span>Q</span></div><span class="art-caption">CAMPAIGN + MULTIPLAYER</span></div>
+          <div class="feature-copy"><p class="eyebrow">CLASSIC GAMES / PYTHON + PYSIDE6</p><h3><a href="https://github.com/Evilchuck666/QuakeDock">QuakeDock <span aria-hidden="true">↗</span></a></h3><p>Less setup. More Quake. Install an engine, configure your game and jump into campaign or QuakeWorld from one desktop app.</p><a class="quiet-link" href="https://github.com/Evilchuck666/ArenaHub">More of an arena person? Meet ArenaHub ↗</a></div>
+        </article>
+        <article class="feature feature-video">
+          <div class="feature-art tape-art" aria-hidden="true"><span class="art-label">02 / A LITTLE ANALOGUE SOUL</span><div class="cassette"><div class="tape-label"><span>VHSIFY</span><small>PLAY ►<br>STEREO</small></div><div class="reels"><i></i><span>━━━━</span><i></i></div><div class="tape-base">HIGH FIDELITY / LOW DEFINITION</div></div><span class="art-caption">GRAIN. TRACKING. TAPE HISS.</span></div>
+          <div class="feature-copy"><p class="eyebrow">VIDEO TOOLS / FFMPEG + SOX</p><h3><a href="https://github.com/Evilchuck666/VHSify">VHSify <span aria-hidden="true">↗</span></a></h3><p>Digital video with a worn-in character. Chroma bleed, tracking jitter and tape hiss, built with cross-platform scripts.</p><a class="quiet-link" href="https://github.com/Evilchuck666/PyVideoKit">For the whole editing toolkit: PyVideoKit ↗</a></div>
+        </article>
+      </div>
+      <div class="catalog-heading"><h3>The rest of the workbench</h3><span class="mono">12 PUBLIC PROJECTS</span></div>
+      <div class="filters" role="group" aria-label="Filter projects" hidden><button type="button" data-filter="all" aria-pressed="true">All projects</button><button type="button" data-filter="games" aria-pressed="false">Games</button><button type="button" data-filter="media" aria-pressed="false">Video &amp; audio</button><button type="button" data-filter="tools" aria-pressed="false">Everyday tools</button><button type="button" data-filter="garage" aria-pressed="false">Garage</button></div>
+      <p id="filter-status" class="sr-only" role="status" aria-live="polite"></p>
+      <div id="repo-grid" class="repo-grid">
+        <article class="repo-card" data-category="games">
+          <div class="repo-top mono"><span>01 / GAMES</span><span>Python</span></div>
+          <h4><a href="https://github.com/Evilchuck666/QuakeDock">QuakeDock<span aria-hidden="true">↗</span></a></h4>
+          <p>Cross-platform installer and launcher for Quake and QuakeWorld: set up campaign and multiplayer with vkQuake and ezQuake on Windows, Linux or macOS.</p>
+          <div class="repo-tags mono">quake / game-launcher</div>
+        </article>
+        <article class="repo-card" data-category="games">
+          <div class="repo-top mono"><span>02 / GAMES</span><span>Python</span></div>
+          <h4><a href="https://github.com/Evilchuck666/ArenaHub">ArenaHub<span aria-hidden="true">↗</span></a></h4>
+          <p>Installer and launcher for Quake III Arena: your Steam copy, the Quake3e engine, classic mods (CPMA, OSP, Rocket Arena 3, Threewave CTF) and 47 map packs.</p>
+          <div class="repo-tags mono">quake-iii-arena / game-launcher</div>
+        </article>
+        <article class="repo-card" data-category="media">
+          <div class="repo-top mono"><span>03 / MEDIA</span><span>Python</span></div>
+          <h4><a href="https://github.com/Evilchuck666/PyVideoKit">PyVideoKit<span aria-hidden="true">↗</span></a></h4>
+          <p>FFmpeg-based video toolkit: trim, concatenate, fade, VHS effect, lossless FFV1 masters and 4K ProRes exports for YouTube. Installs the library, the CLI and the GUI.</p>
+          <div class="repo-tags mono">ffmpeg / video-processing</div>
+        </article>
+        <article class="repo-card" data-category="media">
+          <div class="repo-top mono"><span>04 / MEDIA</span><span>Python</span></div>
+          <h4><a href="https://github.com/Evilchuck666/PyVideoKit-CLI">PyVideoKit-CLI<span aria-hidden="true">↗</span></a></h4>
+          <p>Command-line interface for PyVideoKit: every tool from a single pvk command, with Rich progress bars.</p>
+          <div class="repo-tags mono">cli / click</div>
+        </article>
+        <article class="repo-card" data-category="media">
+          <div class="repo-top mono"><span>05 / MEDIA</span><span>Python</span></div>
+          <h4><a href="https://github.com/Evilchuck666/PyVideoKit-GUI">PyVideoKit-GUI<span aria-hidden="true">↗</span></a></h4>
+          <p>PySide6 desktop app for PyVideoKit: tabs, drag-and-drop, batch processing, and per-file and overall progress.</p>
+          <div class="repo-tags mono">gui / pyside6</div>
+        </article>
+        <article class="repo-card" data-category="media">
+          <div class="repo-top mono"><span>06 / MEDIA</span><span>Python</span></div>
+          <h4><a href="https://github.com/Evilchuck666/PyVideoKit-Libs">PyVideoKit-Libs<span aria-hidden="true">↗</span></a></h4>
+          <p>Core library behind PyVideoKit, with zero Python dependencies: drives FFmpeg, FFprobe and SoX with progress callbacks.</p>
+          <div class="repo-tags mono">python-library / ffmpeg-wrapper</div>
+        </article>
+        <article class="repo-card" data-category="media">
+          <div class="repo-top mono"><span>07 / MEDIA</span><span>Shell</span></div>
+          <h4><a href="https://github.com/Evilchuck666/VHSify">VHSify<span aria-hidden="true">↗</span></a></h4>
+          <p>Turn any video into a worn-out VHS tape: chroma bleed, grain, tracking jitter and tape hiss. FFmpeg and SoX scripts for GNU/Linux, macOS and Windows.</p>
+          <div class="repo-tags mono">vhs / ffmpeg</div>
+        </article>
+        <article class="repo-card" data-category="tools">
+          <div class="repo-top mono"><span>08 / TOOLS</span><span>Python</span></div>
+          <h4><a href="https://github.com/Evilchuck666/WinJitsu">WinJitsu<span aria-hidden="true">↗</span></a></h4>
+          <p>Animated window snapping for Linux X11: glide the active window to halves, quarters, center or fullscreen, and across monitors, from your hotkeys.</p>
+          <div class="repo-tags mono">x11 / window-management</div>
+        </article>
+        <article class="repo-card" data-category="games">
+          <div class="repo-top mono"><span>09 / GAMES</span><span>C++</span></div>
+          <h4><a href="https://github.com/Evilchuck666/KlondikeCLI">KlondikeCLI<span aria-hidden="true">↗</span></a></h4>
+          <p>Klondike solitaire for the terminal in C+⁠+17: seeded deals, draw one or three, move counter and scoring. Originally a 2016 university project.</p>
+          <div class="repo-tags mono">solitaire / terminal-game</div>
+        </article>
+        <article class="repo-card" data-category="garage">
+          <div class="repo-top mono"><span>10 / GARAGE</span><span>C#</span></div>
+          <h4><a href="https://github.com/Evilchuck666/MyReisinLapTimes">MyReisinLapTimes<span aria-hidden="true">↗</span></a></h4>
+          <p>Windows desktop app to log lap times with photos and tire type, rank them in leaderboards and export shareable Top 10 images.</p>
+          <div class="repo-tags mono">lap-times / leaderboard</div>
+        </article>
+        <article class="repo-card" data-category="tools">
+          <div class="repo-top mono"><span>11 / TOOLS</span><span>JavaScript</span></div>
+          <h4><a href="https://github.com/Evilchuck666/hide-scrollbar-youtube-firefox">hide-scrollbar-youtube-firefox<span aria-hidden="true">↗</span></a></h4>
+          <p>Firefox add-on that hides the scrollbar on YouTube video pages so the player uses the full window width. No permissions, no data collection.</p>
+          <div class="repo-tags mono">firefox-addon / youtube</div>
+        </article>
+        <article class="repo-card" data-category="garage">
+          <div class="repo-top mono"><span>12 / GARAGE</span><span>JavaScript</span></div>
+          <h4><a href="https://github.com/Evilchuck666/swift-livery-catalog">swift-livery-catalog<span aria-hidden="true">↗</span></a></h4>
+          <p>Official website for Suifuto Remon, a Suzuki Swift Sport ZC33S automotive project: a visual catalogue of vinyl livery designs.</p>
+          <div class="repo-tags mono">automotive / suzuki</div>
+        </article>
+      </div>
+      <a class="catalog-link quiet-link" href="https://github.com/Evilchuck666?tab=repositories">Browse the repositories on GitHub <span aria-hidden="true">↗</span></a>
+    </section>
+    <section id="garage" class="garage-section" aria-labelledby="garage-title"><div class="wrap garage-inner">
+      <div class="garage-title"><p class="eyebrow">02 / BEYOND THE KEYBOARD</p><h2 id="garage-title">Same curiosity.<br>Different engine.</h2><p>My Suzuki Swift Sport ZC33S is a project of its own. I call it <strong>Suifuto Remon</strong> — a nod to its Japanese roots and Champion Yellow paint.</p><p>Code, mechanics and design meet in a livery catalogue: renders, colours and details worked out before they reach the real car.</p><a class="button button-dark" href="https://evilchuck666.github.io/swift-livery-catalog/">Explore Suifuto Remon <span aria-hidden="true">↗</span></a></div>
+      <div class="garage-plate" aria-hidden="true"><span class="mono">PERSONAL GARAGE / SUZUKI</span><strong>ZC<br><span>33S</span></strong><div class="plate-footer mono"><span>SWIFT SPORT</span><span>CHAMPION YELLOW</span></div></div>
+    </div></section>
+    <section id="about" class="section wrap about-section" aria-labelledby="about-title">
+      <div><p class="eyebrow">03 / THE PERSON BEHIND THE HANDLE</p><h2 id="about-title">Carlos Martínez.<br><span class="muted">Evilchuck666.</span></h2><p class="about-statement">Understand it.<br>Adjust it.<br><em>Make it your own.</em></p></div>
+      <div class="about-copy"><p class="large-copy">I'm a backend developer working mainly with PHP, SQL Server and web technologies. Outside that work, I build tools for the things I enjoy.</p><p>That might mean bringing an old game back to life, making a video look like a tape, getting a desktop to behave just right, or refining a design for my Swift.</p><p>I like the process: learning, trying, correcting and getting the details to make sense together. These projects are where that curiosity goes.</p><div class="toolbox"><p class="eyebrow">MY TOOLBOX</p><dl><div><dt>Backend</dt><dd>PHP · SQL Server · Web</dd></div><div><dt>Desktop</dt><dd>Python · PySide6 · C++ · C#</dd></div><div><dt>Media &amp; scripts</dt><dd>FFmpeg · SoX · Bash · PowerShell</dd></div></dl></div></div>
+    </section>
+    <section class="outro wrap"><p class="eyebrow">THE CODE IS THERE TO EXPLORE.</p><a href="https://github.com/Evilchuck666">See you on GitHub.<span aria-hidden="true">↗</span></a><p>Have an idea or found something to fix? Open an issue in the relevant project.</p></section>
+  </main>
+  <footer class="wrap site-footer"><span>© 2026 Carlos Martínez / Evilchuck666</span><span class="mono">MADE WITH CURIOSITY. TUNED WITH CARE.</span><a href="#">Back to top ↑</a></footer>
+</body>
 </html>
