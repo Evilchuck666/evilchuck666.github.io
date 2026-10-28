@@ -3,7 +3,7 @@ const repos = [
     name: "QuakeDock",
     language: "Python",
     description:
-      "Instalador y lanzador multiplataforma para Quake y QuakeWorld: prepara campaña y multijugador con vkQuake y ezQuake en Windows, Linux o macOS.",
+      "Cross-platform installer and launcher for Quake and QuakeWorld: set up campaign and multiplayer with vkQuake and ezQuake on Windows, Linux or macOS.",
     url: "https://github.com/Evilchuck666/QuakeDock",
     topics: ["quake", "game-launcher", "pyside6"]
   },
@@ -11,7 +11,7 @@ const repos = [
     name: "ArenaHub",
     language: "Python",
     description:
-      "Instalador y lanzador de Quake III Arena: tu copia de Steam, el motor Quake3e, mods clásicos (CPMA, OSP, Rocket Arena 3, Threewave CTF) y 47 packs de mapas.",
+      "Installer and launcher for Quake III Arena: your Steam copy, the Quake3e engine, classic mods (CPMA, OSP, Rocket Arena 3, Threewave CTF) and 47 map packs.",
     url: "https://github.com/Evilchuck666/ArenaHub",
     topics: ["quake-iii-arena", "game-launcher", "cross-platform"]
   },
@@ -19,7 +19,7 @@ const repos = [
     name: "PyVideoKit",
     language: "Python",
     description:
-      "Kit de vídeo basado en FFmpeg: recortes, uniones, fundidos, efecto VHS, másters FFV1 sin pérdida y exportaciones ProRes 4K para YouTube. Instala la librería, la CLI y la GUI.",
+      "FFmpeg-based video toolkit: trim, concatenate, fade, VHS effect, lossless FFV1 masters and 4K ProRes exports for YouTube. Installs the library, the CLI and the GUI.",
     url: "https://github.com/Evilchuck666/PyVideoKit",
     topics: ["ffmpeg", "video-processing", "meta-package"]
   },
@@ -27,7 +27,7 @@ const repos = [
     name: "PyVideoKit-CLI",
     language: "Python",
     description:
-      "Línea de comandos de PyVideoKit: todas las herramientas desde un único comando pvk, con barras de progreso de Rich.",
+      "Command-line interface for PyVideoKit: every tool from a single pvk command, with Rich progress bars.",
     url: "https://github.com/Evilchuck666/PyVideoKit-CLI",
     topics: ["cli", "click", "rich"]
   },
@@ -35,7 +35,7 @@ const repos = [
     name: "PyVideoKit-GUI",
     language: "Python",
     description:
-      "Aplicación de escritorio de PyVideoKit con PySide6: pestañas, arrastrar y soltar, procesado por lotes y progreso por archivo y total.",
+      "PySide6 desktop app for PyVideoKit: tabs, drag-and-drop, batch processing, and per-file and overall progress.",
     url: "https://github.com/Evilchuck666/PyVideoKit-GUI",
     topics: ["gui", "pyside6", "drag-and-drop"]
   },
@@ -43,7 +43,7 @@ const repos = [
     name: "PyVideoKit-Libs",
     language: "Python",
     description:
-      "Librería principal de PyVideoKit, sin dependencias de Python: controla FFmpeg, FFprobe y SoX con callbacks de progreso.",
+      "Core library behind PyVideoKit, with zero Python dependencies: drives FFmpeg, FFprobe and SoX with progress callbacks.",
     url: "https://github.com/Evilchuck666/PyVideoKit-Libs",
     topics: ["python-library", "ffmpeg-wrapper", "sox"]
   },
@@ -51,7 +51,7 @@ const repos = [
     name: "VHSify",
     language: "Shell",
     description:
-      "Convierte cualquier vídeo en una cinta VHS gastada: sangrado de color, grano, saltos de tracking y siseo de cinta. Scripts de FFmpeg y SoX para GNU/Linux, macOS y Windows.",
+      "Turn any video into a worn-out VHS tape: chroma bleed, grain, tracking jitter and tape hiss. FFmpeg and SoX scripts for GNU/Linux, macOS and Windows.",
     url: "https://github.com/Evilchuck666/VHSify",
     topics: ["vhs", "ffmpeg", "retro"]
   },
@@ -59,7 +59,7 @@ const repos = [
     name: "WinJitsu",
     language: "Python",
     description:
-      "Ajuste animado de ventanas en Linux X11: desliza la ventana activa a mitades, cuartos, centro o pantalla completa, y entre monitores, desde tus atajos de teclado.",
+      "Animated window snapping for Linux X11: glide the active window to halves, quarters, center or fullscreen, and across monitors, from your hotkeys.",
     url: "https://github.com/Evilchuck666/WinJitsu",
     topics: ["x11", "window-management", "multi-monitor"]
   },
@@ -67,7 +67,7 @@ const repos = [
     name: "KlondikeCLI",
     language: "C++",
     description:
-      "Solitario Klondike para la terminal en C+\u2060+17: partidas con semilla, robar una o tres cartas, contador de movimientos y puntuación. Nació como proyecto universitario en 2016.",
+      "Klondike solitaire for the terminal in C+\u2060+17: seeded deals, draw one or three, move counter and scoring. Originally a 2016 university project.",
     url: "https://github.com/Evilchuck666/KlondikeCLI",
     topics: ["solitaire", "terminal-game", "cpp17"]
   },
@@ -75,7 +75,7 @@ const repos = [
     name: "MyReisinLapTimes",
     language: "C#",
     description:
-      "App de escritorio para Windows que registra tiempos por vuelta con fotos y tipo de neumático, los clasifica y exporta imágenes Top 10 para compartir.",
+      "Windows desktop app to log lap times with photos and tire type, rank them in leaderboards and export shareable Top 10 images.",
     url: "https://github.com/Evilchuck666/MyReisinLapTimes",
     topics: ["lap-times", "leaderboard", "winforms"]
   },
@@ -83,7 +83,7 @@ const repos = [
     name: "hide-scrollbar-youtube-firefox",
     language: "JavaScript",
     description:
-      "Complemento de Firefox que oculta la barra de desplazamiento en los vídeos de YouTube para que el reproductor use todo el ancho. Sin permisos ni recogida de datos.",
+      "Firefox add-on that hides the scrollbar on YouTube video pages so the player uses the full window width. No permissions, no data collection.",
     url: "https://github.com/Evilchuck666/hide-scrollbar-youtube-firefox",
     topics: ["firefox-addon", "youtube", "webextension"]
   },
@@ -91,7 +91,7 @@ const repos = [
     name: "swift-livery-catalog",
     language: "JavaScript",
     description:
-      "Web oficial de Suifuto Remon, proyecto de automoción con un Suzuki Swift Sport ZC33S: catálogo visual de diseños de vinilo.",
+      "Official website for Suifuto Remon, a Suzuki Swift Sport ZC33S automotive project: a visual catalogue of vinyl livery designs.",
     url: "https://github.com/Evilchuck666/swift-livery-catalog",
     topics: ["automotive", "suzuki", "swift"]
   }

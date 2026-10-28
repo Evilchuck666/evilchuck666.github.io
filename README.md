@@ -7,28 +7,28 @@
 ![Requires](https://img.shields.io/badge/requires-modern%20browser-blue)
 [![License](https://img.shields.io/badge/license-GPLv3-green)](LICENSE)
 
-Portafolio personal de GitHub Pages para Evilchuck666.
+Personal GitHub Pages portfolio for Evilchuck666.
 
-Este sitio presenta los repositorios más relevantes del usuario y sirve como landing page pública para mostrar proyectos, herramientas y trabajos desarrollados en GitHub.
+This site showcases the user's most relevant repositories and serves as a public landing page for projects, tools and work developed on GitHub.
 
-## Visita el sitio
+## Visit the site
 
 https://evilchuck666.github.io/
 
-## Archivos principales
+## Main files
 
-- `index.html` — estructura principal del portfolio
-- `styles.css` — diseño y estilos visuales
-- `script.js` — generación dinámica de tarjetas de repositorios
+- `index.html` — main portfolio structure
+- `styles.css` — visual design and styles
+- `script.js` — dynamic generation of the repository cards
 
-## Propósito
+## Purpose
 
-Mostrar de forma clara y visual los repositorios y proyectos personales del usuario en una página estática publicada con GitHub Pages.
+Show the user's repositories and personal projects clearly and visually on a static page published with GitHub Pages.
 
-## Despliegue
+## Deployment
 
-GitHub Pages detecta automáticamente `index.html` en la rama principal del repositorio.
+GitHub Pages automatically serves `index.html` from the repository's default branch.
 
-## Producción
+## Production
 
-Se creó una página estática con contenido basado en repositorios reales de GitHub.
+A static page was created with content based on real GitHub repositories.
