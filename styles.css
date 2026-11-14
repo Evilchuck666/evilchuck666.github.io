@@ -555,11 +555,19 @@ h2 {
   color:var(--muted);
 }
 
+.catalog-controls {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:16px;
+  margin-bottom:24px;
+}
+
 .filters {
   display:flex;
   gap:8px;
   flex-wrap:wrap;
-  margin-bottom:24px;
 }
 
 .filters button,.pagination button {
@@ -584,7 +592,7 @@ h2 {
 
 .repo-grid {
   display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
+  grid-template-columns:repeat(4,minmax(0,1fr));
   gap:14px;
 }
 
@@ -652,21 +660,22 @@ h2 {
 .pagination {
   display:flex;
   align-items:center;
-  justify-content:center;
+  justify-content:flex-end;
   flex-wrap:wrap;
-  gap:8px;
-  margin-top:24px;
+  gap:6px;
+  margin-left:auto;
 }
 
 .pagination-pages {
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
-  gap:8px;
+  gap:6px;
 }
 
 .pagination button {
-  min-width:40px;
+  padding-inline:10px;
+  min-width:36px;
   min-height:44px;
 }
 
@@ -676,8 +685,8 @@ h2 {
 }
 
 #pagination-summary {
-  flex-basis:100%;
-  text-align:center;
+  text-align:right;
+  white-space:nowrap;
   color:var(--muted);
   font-size:10px;
 }
@@ -1046,6 +1055,12 @@ h2 {
   .filters button,.pagination button {
     font-size:11px;
     padding:8px 10px;
+  }
+  .pagination-label {
+    display:none;
+  }
+  #pagination-summary {
+    flex-basis:100%;
   }
   .repo-grid {
     grid-template-columns:1fr;

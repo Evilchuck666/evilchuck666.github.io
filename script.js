@@ -1,7 +1,8 @@
 "use strict";
 
 // Every project is present in the HTML. Filters and pagination enhance that list.
-const pageSize = 6;
+const pageSize = 4;
+const controls = document.querySelector(".catalog-controls");
 const filters = document.querySelector(".filters");
 const buttons = Array.from(document.querySelectorAll("[data-filter]"));
 const cards = Array.from(document.querySelectorAll(".repo-card"));
@@ -13,7 +14,7 @@ const previous = document.getElementById("previous-page");
 const next = document.getElementById("next-page");
 const summary = document.getElementById("pagination-summary");
 
-if (filters && status && grid && pagination && pageNumbers && previous && next && summary && buttons.length) {
+if (controls && filters && status && grid && pagination && pageNumbers && previous && next && summary && buttons.length) {
   let category = "all";
   let currentPage = 1;
   const totalPages = Math.max(1, Math.ceil(cards.length / pageSize));
@@ -52,7 +53,7 @@ if (filters && status && grid && pagination && pageNumbers && previous && next &
     render();
     // Start reading the new page at its first project, including for keyboard users.
     cards.find((card) => !card.hidden)?.querySelector("h4 a")?.focus({ preventScroll: true });
-    grid.scrollIntoView({ block: "start" });
+    controls.scrollIntoView({ block: "start" });
   }
 
   for (let page = 1; page <= totalPages; page += 1) {

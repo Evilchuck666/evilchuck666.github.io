@@ -60,7 +60,15 @@
         </article>
       </div>
       <div class="catalog-heading"><h3>The rest of the workbench</h3><span class="mono">16 PUBLIC PROJECTS</span></div>
-      <div class="filters" role="group" aria-label="Filter projects" hidden><button type="button" data-filter="all" aria-pressed="true">All projects</button><button type="button" data-filter="games" aria-pressed="false">Games</button><button type="button" data-filter="media" aria-pressed="false">Video &amp; audio</button><button type="button" data-filter="tools" aria-pressed="false">Everyday tools</button><button type="button" data-filter="garage" aria-pressed="false">Garage</button></div>
+      <div class="catalog-controls">
+        <div class="filters" role="group" aria-label="Filter projects" hidden><button type="button" data-filter="all" aria-pressed="true">All projects</button><button type="button" data-filter="games" aria-pressed="false">Games</button><button type="button" data-filter="media" aria-pressed="false">Video &amp; audio</button><button type="button" data-filter="tools" aria-pressed="false">Everyday tools</button><button type="button" data-filter="garage" aria-pressed="false">Garage</button></div>
+        <nav class="pagination" aria-label="Project pages" hidden>
+          <button type="button" id="previous-page" aria-label="Previous page" aria-controls="repo-grid"><span aria-hidden="true">←</span><span class="pagination-label"> Previous</span></button>
+          <div class="pagination-pages"></div>
+          <button type="button" id="next-page" aria-label="Next page" aria-controls="repo-grid"><span class="pagination-label">Next </span><span aria-hidden="true">→</span></button>
+          <span id="pagination-summary" class="mono"></span>
+        </nav>
+      </div>
       <p id="filter-status" class="sr-only" role="status" aria-live="polite"></p>
       <div id="repo-grid" class="repo-grid">
         <!-- PROJECTS:START -->
@@ -162,12 +170,6 @@
         </article>
         <!-- PROJECTS:END -->
       </div>
-      <nav class="pagination" aria-label="Project pages" hidden>
-        <button type="button" id="previous-page" aria-controls="repo-grid">← Previous</button>
-        <div class="pagination-pages"></div>
-        <button type="button" id="next-page" aria-controls="repo-grid">Next →</button>
-        <span id="pagination-summary" class="mono"></span>
-      </nav>
       <a class="catalog-link quiet-link" href="https://github.com/Evilchuck666?tab=repositories">Browse the repositories on GitHub <span aria-hidden="true">↗</span></a>
     </section>
     <section id="garage" class="garage-section" aria-labelledby="garage-title"><div class="wrap garage-inner">

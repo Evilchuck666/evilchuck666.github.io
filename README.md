@@ -26,7 +26,7 @@ Then visit `http://localhost:8000`.
 
 - `index.html`: biography, featured work and complete project catalogue.
 - `styles.css`: responsive dark/Champion Yellow design, original CSS illustrations and reduced-motion support.
-- `script.js`: accessible category filters and six-card pagination for All projects.
+- `script.js`: accessible category filters and four-card pagination for All projects.
 - `assets/favicon.svg`: local EC favicon.
 - `projects.json`: catalogue categories, exclusions, ordering and curated copy.
 - `scripts/sync_projects.py`: synchronizes the cards and total with public GitHub repositories.
@@ -36,8 +36,11 @@ Then visit `http://localhost:8000`.
 - `.github/workflows/checks.yml`: runs the checks on every push and pull request.
 - `.github/workflows/projects.yml`: synchronizes, checks, commits changes and deploys Pages.
 
-**All projects** shows six cards per page, with Previous/Next buttons and numbered
-pages. Category filters show all matching projects without pagination; returning
+**All projects** shows four cards per page, in one row of four on desktop
+(two columns on tablets, one on phones). Previous/Next buttons and numbered pages
+sit above the cards, to the right of the category filters, wrapping on narrow
+screens. Page changes keep those controls in view so the shorter catalogue also
+exposes the content that follows. Category filters show all matching projects without pagination; returning
 to All projects resets to page one. Page changes announce the range and move
 focus to the first displayed project. Without JavaScript, the full catalogue
 remains visible and the filters and pagination controls stay hidden.

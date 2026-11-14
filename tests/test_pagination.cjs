@@ -30,7 +30,7 @@ function setup(categories = catalogue) {
     scrollIntoView() { this.scrolled = true; }
     querySelector() { return this.link; }
   }
-  const names = ["filters", "filter-status", "repo-grid", "pagination", "pagination-pages",
+  const names = ["catalog-controls", "filters", "filter-status", "repo-grid", "pagination", "pagination-pages",
     "previous-page", "next-page", "pagination-summary"];
   const elements = Object.fromEntries(names.map((name) => [name, new Element()]));
   elements.filters.hidden = elements.pagination.hidden = true;
@@ -61,16 +61,16 @@ function setup(categories = catalogue) {
   };
 }
 
-test("All projects starts with the first six cards and an accessible current page", () => {
+test("All projects starts with the first four cards and an accessible current page", () => {
   const ui = setup();
-  assert.deepEqual(ui.visible(), ui.cards.slice(0, 6));
+  assert.deepEqual(ui.visible(), ui.cards.slice(0, 4));
   assert.equal(ui.elements.pagination.hidden, false);
   assert.equal(ui.previous.disabled, true);
   assert.equal(ui.next.disabled, false);
-  assert.equal(ui.pages.length, Math.ceil(catalogue.length / 6));
+  assert.equal(ui.pages.length, Math.ceil(catalogue.length / 4));
   assert.equal(ui.pages[0].attributes["aria-current"], "page");
   assert.equal(ui.pages[0].attributes["aria-controls"], "repo-grid");
-  assert.equal(ui.elements["pagination-summary"].textContent, `1–6 of ${catalogue.length}`);
+  assert.equal(ui.elements["pagination-summary"].textContent, `1–4 of ${catalogue.length}`);
   assert.equal(ui.focused(), undefined, "Initial load must not steal focus");
 });
 
@@ -79,12 +79,12 @@ test("Next, Previous and direct page selection reach every project in order", ()
   const seen = [...ui.visible()];
   for (let page = 1; page < ui.pages.length; page += 1) {
     ui.next.click();
-    const expected = ui.cards.slice(page * 6, (page + 1) * 6);
+    const expected = ui.cards.slice(page * 4, (page + 1) * 4);
     assert.deepEqual(ui.visible(), expected);
     assert.equal(ui.pages[page].attributes["aria-current"], "page");
     assert.equal(ui.pages.filter((button) => button.attributes["aria-current"]).length, 1);
     assert.equal(ui.focused(), expected[0].link);
-    assert.equal(ui.elements["repo-grid"].scrolled, true);
+    assert.equal(ui.elements["catalog-controls"].scrolled, true);
     seen.push(...ui.visible());
   }
   assert.deepEqual(seen, ui.cards);
@@ -92,9 +92,9 @@ test("Next, Previous and direct page selection reach every project in order", ()
   ui.next.click();
   assert.equal(ui.next.disabled, true);
   ui.previous.click();
-  assert.deepEqual(ui.visible(), ui.cards.slice((ui.pages.length - 2) * 6, (ui.pages.length - 1) * 6));
+  assert.deepEqual(ui.visible(), ui.cards.slice((ui.pages.length - 2) * 4, (ui.pages.length - 1) * 4));
   ui.pages[0].click();
-  assert.deepEqual(ui.visible(), ui.cards.slice(0, 6));
+  assert.deepEqual(ui.visible(), ui.cards.slice(0, 4));
   assert.equal(ui.previous.disabled, true);
 });
 
@@ -112,24 +112,24 @@ test("Category filters show all matches and returning to All projects resets pag
     assert.deepEqual(ui.visible(), matching, "Hidden pagination must not change a category");
   }
   ui.filter("all").click();
-  assert.deepEqual(ui.visible(), ui.cards.slice(0, 6));
+  assert.deepEqual(ui.visible(), ui.cards.slice(0, 4));
   assert.equal(ui.elements.pagination.hidden, false);
   assert.equal(ui.pages[0].attributes["aria-current"], "page");
 });
 
 test("Pagination adapts to empty, single-page and growing catalogues", () => {
-  for (const total of [0, 1, 6, 7, 12, 13, 24, 25]) {
+  for (const total of [0, 1, 3, 4, 5, 8, 9, 16, 17]) {
     const ui = setup(Array(total).fill("games"));
-    assert.equal(ui.visible().length, Math.min(6, total));
-    assert.equal(ui.elements.pagination.hidden, total <= 6);
-    assert.equal(ui.pages.length, Math.max(1, Math.ceil(total / 6)));
+    assert.equal(ui.visible().length, Math.min(4, total));
+    assert.equal(ui.elements.pagination.hidden, total <= 4);
+    assert.equal(ui.pages.length, Math.max(1, Math.ceil(total / 4)));
     ui.pages.at(-1).click();
-    assert.equal(ui.visible().length, total === 0 ? 0 : ((total - 1) % 6) + 1);
+    assert.equal(ui.visible().length, total === 0 ? 0 : ((total - 1) % 4) + 1);
     assert.equal(ui.next.disabled, true);
     ui.filter("media").click();
     assert.equal(ui.visible().length, 0);
     assert.equal(ui.elements.pagination.hidden, true);
     ui.filter("all").click();
-    assert.equal(ui.visible().length, Math.min(6, total));
+    assert.equal(ui.visible().length, Math.min(4, total));
   }
 });
