@@ -1,0 +1,150 @@
+{
+  "user": "Evilchuck666",
+  "default_category": "tools",
+  "exclude_forks": true,
+  "exclude": [
+    "evilchuck666.github.io"
+  ],
+  "order": [
+    "QuakeDock",
+    "ArenaHub",
+    "PyVideoKit",
+    "PyVideoKit-CLI",
+    "PyVideoKit-GUI",
+    "PyVideoKit-Libs",
+    "VHSify",
+    "WinJitsu",
+    "KlondikeCLI",
+    "MyReisinLapTimes",
+    "hide-scrollbar-youtube-firefox",
+    "swift-livery-catalog"
+  ],
+  "overrides": {
+    "QuakeDock": {
+      "category": "games",
+      "description": "Cross-platform installer and launcher for Quake and QuakeWorld: set up campaign and multiplayer with vkQuake and ezQuake on Windows, Linux or macOS.",
+      "language": "Python",
+      "tags": [
+        "quake",
+        "game-launcher"
+      ]
+    },
+    "ArenaHub": {
+      "category": "games",
+      "description": "Installer and launcher for Quake III Arena: your Steam copy, the Quake3e engine, classic mods (CPMA, OSP, Rocket Arena 3, Threewave CTF) and 47 map packs.",
+      "language": "Python",
+      "tags": [
+        "quake-iii-arena",
+        "game-launcher"
+      ]
+    },
+    "PyVideoKit": {
+      "category": "media",
+      "description": "FFmpeg-based video toolkit: trim, concatenate, fade, VHS effect, lossless FFV1 masters and 4K ProRes exports for YouTube. Installs the library, the CLI and the GUI.",
+      "language": "Python",
+      "tags": [
+        "ffmpeg",
+        "video-processing"
+      ]
+    },
+    "PyVideoKit-CLI": {
+      "category": "media",
+      "description": "Command-line interface for PyVideoKit: every tool from a single pvk command, with Rich progress bars.",
+      "language": "Python",
+      "tags": [
+        "cli",
+        "click"
+      ]
+    },
+    "PyVideoKit-GUI": {
+      "category": "media",
+      "description": "PySide6 desktop app for PyVideoKit: tabs, drag-and-drop, batch processing, and per-file and overall progress.",
+      "language": "Python",
+      "tags": [
+        "gui",
+        "pyside6"
+      ]
+    },
+    "PyVideoKit-Libs": {
+      "category": "media",
+      "description": "Core library behind PyVideoKit, with zero Python dependencies: drives FFmpeg, FFprobe and SoX with progress callbacks.",
+      "language": "Python",
+      "tags": [
+        "python-library",
+        "ffmpeg-wrapper"
+      ]
+    },
+    "VHSify": {
+      "category": "media",
+      "description": "Turn any video into a worn-out VHS tape: chroma bleed, grain, tracking jitter and tape hiss. FFmpeg and SoX scripts for GNU/Linux, macOS and Windows.",
+      "language": "Shell",
+      "tags": [
+        "vhs",
+        "ffmpeg"
+      ]
+    },
+    "WinJitsu": {
+      "category": "tools",
+      "description": "Animated window snapping for Linux X11: glide the active window to halves, quarters, center or fullscreen, and across monitors, from your hotkeys.",
+      "language": "Python",
+      "tags": [
+        "x11",
+        "window-management"
+      ]
+    },
+    "KlondikeCLI": {
+      "category": "games",
+      "description": "Klondike solitaire for the terminal in C+⁠+17: seeded deals, draw one or three, move counter and scoring. Originally a 2016 university project.",
+      "language": "C++",
+      "tags": [
+        "solitaire",
+        "terminal-game"
+      ]
+    },
+    "MyReisinLapTimes": {
+      "category": "garage",
+      "description": "Windows desktop app to log lap times with photos and tire type, rank them in leaderboards and export shareable Top 10 images.",
+      "language": "C#",
+      "tags": [
+        "lap-times",
+        "leaderboard"
+      ]
+    },
+    "hide-scrollbar-youtube-firefox": {
+      "category": "tools",
+      "description": "Firefox add-on that hides the scrollbar on YouTube video pages so the player uses the full window width. No permissions, no data collection.",
+      "language": "JavaScript",
+      "tags": [
+        "firefox-addon",
+        "youtube"
+      ]
+    },
+    "swift-livery-catalog": {
+      "category": "garage",
+      "description": "Official website for Suifuto Remon, a Suzuki Swift Sport ZC33S automotive project: a visual catalogue of vinyl livery designs.",
+      "language": "JavaScript",
+      "tags": [
+        "automotive",
+        "suzuki"
+      ]
+    },
+    "Echora": {
+      "category": "media",
+      "tags": [
+        "music-streaming",
+        "self-hosted"
+      ]
+    },
+    "echora-web": {
+      "category": "media",
+      "description": "Web client for Echora: browse your music library and stream your own collection from a self-hosted server, with React and TypeScript.",
+      "tags": [
+        "music-streaming",
+        "react"
+      ]
+    },
+    "Trackfolio": {
+      "category": "media"
+    }
+  }
+}
