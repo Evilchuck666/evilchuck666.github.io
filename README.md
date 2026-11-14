@@ -39,10 +39,10 @@ Then visit `http://localhost:8000`.
 **All projects** shows four cards per page, in one row of four on desktop
 (two columns on tablets, one on phones). Previous/Next buttons and numbered pages
 sit above the cards, to the right of the category filters, wrapping on narrow
-screens. Page changes keep those controls in view so the shorter catalogue also
-exposes the content that follows. Category filters show all matching projects without pagination; returning
+screens. The shorter catalogue exposes more of the content that follows.
+Category filters show all matching projects without pagination; returning
 to All projects resets to page one. Page changes announce the range and move
-focus to the first displayed project. Without JavaScript, the full catalogue
+focus to the first displayed project without scrolling the page. Without JavaScript, the full catalogue
 remains visible and the filters and pagination controls stay hidden.
 
 ## 🔄 Automatic project catalogue

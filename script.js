@@ -53,7 +53,6 @@ if (controls && filters && status && grid && pagination && pageNumbers && previo
     render();
     // Start reading the new page at its first project, including for keyboard users.
     cards.find((card) => !card.hidden)?.querySelector("h4 a")?.focus({ preventScroll: true });
-    controls.scrollIntoView({ block: "start" });
   }
 
   for (let page = 1; page <= totalPages; page += 1) {

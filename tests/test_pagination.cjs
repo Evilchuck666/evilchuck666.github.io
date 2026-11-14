@@ -26,7 +26,7 @@ function setup(categories = catalogue) {
     addEventListener(name, handler) { this.listeners[name] = handler; }
     append(child) { this.children.push(child); }
     click() { if (!this.disabled) this.listeners.click?.(); }
-    focus() { focused = this; }
+    focus(options) { focused = this; this.focusOptions = options; }
     scrollIntoView() { this.scrolled = true; }
     querySelector() { return this.link; }
   }
@@ -84,7 +84,8 @@ test("Next, Previous and direct page selection reach every project in order", ()
     assert.equal(ui.pages[page].attributes["aria-current"], "page");
     assert.equal(ui.pages.filter((button) => button.attributes["aria-current"]).length, 1);
     assert.equal(ui.focused(), expected[0].link);
-    assert.equal(ui.elements["catalog-controls"].scrolled, true);
+    assert.equal(ui.focused().focusOptions.preventScroll, true);
+    assert.equal(Object.values(ui.elements).some((element) => element.scrolled), false);
     seen.push(...ui.visible());
   }
   assert.deepEqual(seen, ui.cards);
@@ -93,9 +94,12 @@ test("Next, Previous and direct page selection reach every project in order", ()
   assert.equal(ui.next.disabled, true);
   ui.previous.click();
   assert.deepEqual(ui.visible(), ui.cards.slice((ui.pages.length - 2) * 4, (ui.pages.length - 1) * 4));
+  assert.equal(ui.focused().focusOptions.preventScroll, true);
   ui.pages[0].click();
   assert.deepEqual(ui.visible(), ui.cards.slice(0, 4));
   assert.equal(ui.previous.disabled, true);
+  assert.equal(ui.focused().focusOptions.preventScroll, true);
+  assert.equal(Object.values(ui.elements).some((element) => element.scrolled), false);
 });
 
 test("Category filters show all matches and returning to All projects resets page one", () => {
