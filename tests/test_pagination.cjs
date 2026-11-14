@@ -102,18 +102,31 @@ test("Next, Previous and direct page selection reach every project in order", ()
   assert.equal(Object.values(ui.elements).some((element) => element.scrolled), false);
 });
 
-test("Category filters show all matches and returning to All projects resets page one", () => {
+test("Each category paginates only its matches and filter changes reset page one", () => {
   const ui = setup();
   ui.next.click();
   for (const category of ["media", "games", "tools", "garage"]) {
     ui.filter(category).click();
     const matching = ui.cards.filter((card) => card.dataset.category === category);
-    assert.deepEqual(ui.visible(), matching);
-    assert.equal(ui.elements.pagination.hidden, true);
+    assert.deepEqual(ui.visible(), matching.slice(0, 4));
+    assert.equal(ui.elements.pagination.hidden, matching.length <= 4);
     assert.equal(ui.filter(category).attributes["aria-pressed"], "true");
-    assert.ok(ui.elements["filter-status"].textContent.startsWith(`${matching.length} projects shown:`));
-    ui.next.click();
-    assert.deepEqual(ui.visible(), matching, "Hidden pagination must not change a category");
+    const totalPages = Math.max(1, Math.ceil(matching.length / 4));
+    assert.equal(ui.pages.filter((button) => !button.hidden).length, totalPages);
+    assert.ok(ui.elements["filter-status"].textContent.endsWith(`Page 1 of ${totalPages}.`));
+    const seen = [...ui.visible()];
+    for (let page = 1; page < totalPages; page += 1) {
+      ui.next.click();
+      assert.deepEqual(ui.visible(), matching.slice(page * 4, (page + 1) * 4));
+      assert.equal(ui.focused().focusOptions.preventScroll, true);
+      assert.equal(Object.values(ui.elements).some((element) => element.scrolled), false);
+      seen.push(...ui.visible());
+    }
+    assert.deepEqual(seen, matching, "Every matching project must appear exactly once");
+    assert.equal(ui.next.disabled, true);
+    ui.filter(category).click();
+    assert.deepEqual(ui.visible(), matching.slice(0, 4));
+    assert.equal(ui.previous.disabled, true);
   }
   ui.filter("all").click();
   assert.deepEqual(ui.visible(), ui.cards.slice(0, 4));
@@ -130,10 +143,41 @@ test("Pagination adapts to empty, single-page and growing catalogues", () => {
     ui.pages.at(-1).click();
     assert.equal(ui.visible().length, total === 0 ? 0 : ((total - 1) % 4) + 1);
     assert.equal(ui.next.disabled, true);
+    ui.filter("games").click();
+    assert.equal(ui.visible().length, Math.min(4, total));
+    assert.equal(ui.elements.pagination.hidden, total <= 4);
+    ui.pages.at(-1).click();
+    assert.equal(ui.visible().length, total === 0 ? 0 : ((total - 1) % 4) + 1);
     ui.filter("media").click();
     assert.equal(ui.visible().length, 0);
     assert.equal(ui.elements.pagination.hidden, true);
     ui.filter("all").click();
     assert.equal(ui.visible().length, Math.min(4, total));
   }
+});
+
+test("Category page counts and navigation follow filtered order with interleaved cards", () => {
+  const categories = ["media", "games", "media", "tools", "media", "games", "media", "garage", "media"];
+  const ui = setup(categories);
+  const matching = ui.cards.filter((card) => card.dataset.category === "media");
+  ui.pages[2].click();
+  ui.filter("media").click();
+  assert.deepEqual(ui.visible(), matching.slice(0, 4));
+  assert.equal(ui.elements["pagination-summary"].textContent, "1–4 of 5");
+  assert.equal(ui.pages.filter((button) => !button.hidden).length, 2);
+  ui.pages[2].click();
+  assert.deepEqual(ui.visible(), matching.slice(0, 4), "Out-of-range pages must be ignored");
+  ui.pages[1].click();
+  assert.deepEqual(ui.visible(), matching.slice(4));
+  assert.equal(ui.elements["pagination-summary"].textContent, "5–5 of 5");
+  assert.equal(ui.next.disabled, true);
+  ui.previous.click();
+  assert.deepEqual(ui.visible(), matching.slice(0, 4));
+  assert.equal(ui.previous.disabled, true);
+  ui.filter("tools").click();
+  assert.equal(ui.visible().length, 1);
+  assert.equal(ui.elements.pagination.hidden, true);
+  ui.filter("all").click();
+  assert.equal(ui.pages.filter((button) => !button.hidden).length, 3);
+  assert.deepEqual(ui.visible(), ui.cards.slice(0, 4));
 });

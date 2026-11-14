@@ -17,38 +17,35 @@ const summary = document.getElementById("pagination-summary");
 if (controls && filters && status && grid && pagination && pageNumbers && previous && next && summary && buttons.length) {
   let category = "all";
   let currentPage = 1;
-  const totalPages = Math.max(1, Math.ceil(cards.length / pageSize));
+  let totalPages = Math.max(1, Math.ceil(cards.length / pageSize));
   const pageButtons = [];
 
   function render() {
-    const isAll = category === "all";
+    const matching = cards.filter((card) => category === "all" || card.dataset.category === category);
+    totalPages = Math.max(1, Math.ceil(matching.length / pageSize));
     const start = (currentPage - 1) * pageSize;
-    let count = 0;
-    cards.forEach((card, index) => {
-      card.hidden = isAll
-        ? index < start || index >= start + pageSize
-        : card.dataset.category !== category;
-      if (!card.hidden) count += 1;
+    cards.forEach((card) => { card.hidden = true; });
+    matching.forEach((card, index) => {
+      card.hidden = index < start || index >= start + pageSize;
     });
     buttons.forEach((button) => {
       button.setAttribute("aria-pressed", String(button.dataset.filter === category));
     });
-    pagination.hidden = !isAll || totalPages === 1;
+    pagination.hidden = totalPages === 1;
     previous.disabled = currentPage === 1;
     next.disabled = currentPage === totalPages;
     pageButtons.forEach((button, index) => {
+      button.hidden = index >= totalPages;
       if (index + 1 === currentPage) button.setAttribute("aria-current", "page");
       else button.removeAttribute("aria-current");
     });
-    summary.textContent = `${cards.length ? start + 1 : 0}–${Math.min(start + pageSize, cards.length)} of ${cards.length}`;
+    summary.textContent = `${matching.length ? start + 1 : 0}–${Math.min(start + pageSize, matching.length)} of ${matching.length}`;
     const label = buttons.find((button) => button.dataset.filter === category).textContent;
-    status.textContent = isAll
-      ? `Projects ${summary.textContent}: ${label}. Page ${currentPage} of ${totalPages}.`
-      : `${count} projects shown: ${label}.`;
+    status.textContent = `Projects ${summary.textContent}: ${label}. Page ${currentPage} of ${totalPages}.`;
   }
 
   function goToPage(page) {
-    if (category !== "all" || page < 1 || page > totalPages || page === currentPage) return;
+    if (page < 1 || page > totalPages || page === currentPage) return;
     currentPage = page;
     render();
     // Start reading the new page at its first project, including for keyboard users.
