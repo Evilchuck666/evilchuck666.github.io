@@ -12,6 +12,10 @@ permissions:
   contents: read
 
 # Serialize catalogue writes and deployments. Never cancel an active deployment.
+# The JavaScript actions below run on Node 24.
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+
 concurrency:
   group: portfolio-pages
   cancel-in-progress: false
@@ -46,7 +50,7 @@ jobs:
         run: python3 -m unittest discover -v tests
 
       - name: Check Pages configuration
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - name: Commit catalogue changes if needed
         run: |
@@ -66,7 +70,7 @@ jobs:
           cp -R assets _site/assets
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: _site
 
@@ -85,4 +89,4 @@ jobs:
       # Explicit deployment is necessary: a GITHUB_TOKEN push cannot trigger Pages.
       - name: Deploy checked site
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

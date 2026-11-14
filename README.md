@@ -6,7 +6,7 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES2015-blue)
 ![Requires](https://img.shields.io/badge/requires-modern%20browser-blue)
 [![License](https://img.shields.io/badge/license-GPLv3-green)](LICENSE)
-[![Build and tests](https://github.com/Evilchuck666/evilchuck666.github.io/actions/workflows/checks.yml/badge.svg?branch=main)](https://github.com/Evilchuck666/evilchuck666.github.io/actions/workflows/checks.yml)
+[![Build and tests](https://github.com/Evilchuck666/evilchuck666.github.io/actions/workflows/checks.yaml/badge.svg?branch=main)](https://github.com/Evilchuck666/evilchuck666.github.io/actions/workflows/checks.yaml)
 
 Personal website for Carlos Martínez: backend development, classic games, video tools and the Suifuto Remon automotive project.
 
@@ -33,8 +33,8 @@ Then visit `http://localhost:8000`.
 - `tests/test_site.py`: static checks for links, ids, filters and the project catalogue.
 - `tests/test_pagination.cjs`: dependency-free behavior tests for filters and pagination.
 - `tests/test_sync_projects.py`: offline regression tests for synchronization and API failures.
-- `.github/workflows/checks.yml`: runs the checks on every push and pull request.
-- `.github/workflows/projects.yml`: synchronizes, checks, commits changes and deploys Pages.
+- `.github/workflows/checks.yaml`: runs the checks on every push and pull request.
+- `.github/workflows/projects.yaml`: synchronizes, checks, commits changes and deploys Pages.
 
 **All projects** and each category show up to four cards per page, in one row of four on desktop
 (two columns on tablets, one on phones). Previous/Next buttons and numbered pages
@@ -112,7 +112,7 @@ filter, which then shows zero projects.
 
 ## 🧪 Tests
 
-The [`Build and tests`](.github/workflows/checks.yml) workflow checks the JavaScript syntax and runs the site tests. They need only Python 3 and Node.js, with no packages to install. To run them locally:
+The [`Build and tests`](.github/workflows/checks.yaml) workflow checks the JavaScript syntax and runs the site tests. They need only Python 3 and Node.js, with no packages to install. To run them locally:
 
 ```sh
 node --check script.js
