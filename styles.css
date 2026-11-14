@@ -562,7 +562,7 @@ h2 {
   margin-bottom:24px;
 }
 
-.filters button {
+.filters button,.pagination button {
   padding:8px 15px;
   border:1px solid var(--line);
   background:transparent;
@@ -571,12 +571,12 @@ h2 {
   cursor:pointer;
 }
 
-.filters button:hover {
+.filters button:hover,.pagination button:not(:disabled):hover {
   border-color:var(--yellow);
   color:var(--yellow);
 }
 
-.filters button[aria-pressed=true] {
+.filters button[aria-pressed=true],.pagination button[aria-current=page] {
   background:var(--yellow);
   border-color:var(--yellow);
   color:var(--bg);
@@ -647,6 +647,39 @@ h2 {
   border-top:1px solid var(--line);
   padding-top:14px;
   margin-top:auto;
+}
+
+.pagination {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:24px;
+}
+
+.pagination-pages {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:8px;
+}
+
+.pagination button {
+  min-width:40px;
+  min-height:44px;
+}
+
+.pagination button:disabled {
+  opacity:.4;
+  cursor:default;
+}
+
+#pagination-summary {
+  flex-basis:100%;
+  text-align:center;
+  color:var(--muted);
+  font-size:10px;
 }
 
 .catalog-link {
@@ -1010,7 +1043,7 @@ h2 {
   .filters {
     gap:7px;
   }
-  .filters button {
+  .filters button,.pagination button {
     font-size:11px;
     padding:8px 10px;
   }

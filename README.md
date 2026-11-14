@@ -26,14 +26,21 @@ Then visit `http://localhost:8000`.
 
 - `index.html`: biography, featured work and complete project catalogue.
 - `styles.css`: responsive dark/Champion Yellow design, original CSS illustrations and reduced-motion support.
-- `script.js`: accessible category filters; hides no content until JavaScript loads.
+- `script.js`: accessible category filters and six-card pagination for All projects.
 - `assets/favicon.svg`: local EC favicon.
 - `projects.json`: catalogue categories, exclusions, ordering and curated copy.
 - `scripts/sync_projects.py`: synchronizes the cards and total with public GitHub repositories.
 - `tests/test_site.py`: static checks for links, ids, filters and the project catalogue.
+- `tests/test_pagination.cjs`: dependency-free behavior tests for filters and pagination.
 - `tests/test_sync_projects.py`: offline regression tests for synchronization and API failures.
 - `.github/workflows/checks.yml`: runs the checks on every push and pull request.
 - `.github/workflows/projects.yml`: synchronizes, checks, commits changes and deploys Pages.
+
+**All projects** shows six cards per page, with Previous/Next buttons and numbered
+pages. Category filters show all matching projects without pagination; returning
+to All projects resets to page one. Page changes announce the range and move
+focus to the first displayed project. Without JavaScript, the full catalogue
+remains visible and the filters and pagination controls stay hidden.
 
 ## 🔄 Automatic project catalogue
 
@@ -105,6 +112,7 @@ The [`Build and tests`](.github/workflows/checks.yml) workflow checks the JavaSc
 
 ```sh
 node --check script.js
+node --test tests/test_pagination.cjs
 python3 -m unittest discover -v tests
 ```
 

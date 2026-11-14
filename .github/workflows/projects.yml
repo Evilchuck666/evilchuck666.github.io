@@ -39,6 +39,9 @@ jobs:
       - name: Check JavaScript syntax
         run: node --check script.js
 
+      - name: Check filters and pagination
+        run: node --test tests/test_pagination.cjs
+
       - name: Run site and synchronizer tests
         run: python3 -m unittest discover -v tests
 
