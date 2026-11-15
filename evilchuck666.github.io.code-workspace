@@ -1,0 +1,114 @@
+{
+  "folders": [
+    {
+      "name": "evilchuck666.github.io",
+      "path": "."
+    }
+  ],
+  "settings": {
+    // The synchronizer and the tests use only the standard library: any Python 3.10+ works, no virtual environment.
+    "python.testing.unittestEnabled": true,
+    "python.testing.pytestEnabled": false,
+    "python.testing.unittestArgs": ["-v", "-s", "./tests", "-p", "test_*.py"],
+    "files.exclude": {
+      "**/__pycache__": true
+    },
+    "search.exclude": {
+      "_site": true,
+      "**/__pycache__": true
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "ms-python.python",
+      "ms-python.debugpy",
+      "github.vscode-github-actions"
+    ]
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        // Uses the editor's built-in JavaScript debugger with Google Chrome, on the local server started by the task.
+        "name": "Site: debug in Chrome",
+        "type": "chrome",
+        "request": "launch",
+        "url": "http://localhost:8000",
+        "webRoot": "${workspaceFolder:evilchuck666.github.io}",
+        "preLaunchTask": "Site: serve"
+      },
+      {
+        // Compares the catalogue with GitHub without touching index.html (exit code 1 means changes are needed).
+        "name": "Site: sync catalogue (--check)",
+        "type": "debugpy",
+        "request": "launch",
+        "program": "${workspaceFolder:evilchuck666.github.io}/scripts/sync_projects.py",
+        "args": ["--check"],
+        "cwd": "${workspaceFolder:evilchuck666.github.io}",
+        "console": "integratedTerminal",
+        "justMyCode": true
+      }
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        // Background task: ready once http.server prints its address, so the debugger can open the browser after it.
+        "label": "Site: serve",
+        "type": "process",
+        "command": "python3",
+        "args": ["-m", "http.server", "8000", "--bind", "127.0.0.1"],
+        "options": {
+          "cwd": "${workspaceFolder:evilchuck666.github.io}"
+        },
+        "isBackground": true,
+        "problemMatcher": {
+          "owner": "http.server",
+          "pattern": { "regexp": "^\\b$" },
+          "background": {
+            "activatesOnStart": true,
+            "beginsPattern": "Serving HTTP",
+            "endsPattern": "Serving HTTP"
+          }
+        }
+      },
+      {
+        // Same checks as the "Build and tests" workflow.
+        "label": "Site: checks",
+        "type": "shell",
+        "command": "node --check script.js && node --test tests/test_pagination.cjs && python3 -m unittest discover -v tests",
+        "options": {
+          "cwd": "${workspaceFolder:evilchuck666.github.io}"
+        },
+        "group": {
+          "kind": "test",
+          "isDefault": true
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "Site: sync catalogue (check only)",
+        "type": "process",
+        "command": "python3",
+        "args": ["scripts/sync_projects.py", "--check"],
+        "options": {
+          "cwd": "${workspaceFolder:evilchuck666.github.io}"
+        },
+        "problemMatcher": []
+      },
+      {
+        // Rewrites only the cards between PROJECTS:START/END and the project total in index.html: curated copy goes in
+        // projects.json. A GITHUB_TOKEN in the environment is optional and only raises the API rate limit.
+        "label": "Site: sync catalogue (update index.html)",
+        "type": "process",
+        "command": "python3",
+        "args": ["scripts/sync_projects.py"],
+        "options": {
+          "cwd": "${workspaceFolder:evilchuck666.github.io}"
+        },
+        "problemMatcher": []
+      }
+    ]
+  }
+}
