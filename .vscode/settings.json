@@ -1,0 +1,24 @@
+{
+  // Folder-scoped settings only (resource and language scopes). The project is opened through
+  // evilchuck666.github.io.code-workspace, and VS Code ignores window-scoped settings in this file when it is: those
+  // live in the workspace file. Never repeat a setting in both places.
+
+  // The Python tests in tests/ in the Testing view, discovered as the workflows run them (python3 -m unittest discover
+  // -v tests). Standard library only: any Python 3.10+ works, with no virtual environment or packages. Keep the slash
+  // in "./tests": with it, the extension puts the project root on sys.path, which tests/test_sync_projects.py needs to
+  // import scripts/sync_projects.py.
+  "python.testing.unittestEnabled": true,
+  "python.testing.pytestEnabled": false,
+  "python.testing.unittestArgs": ["-v", "-s", "./tests", "-p", "test_*.py"],
+
+  // Every file uses LF line endings, ends in exactly one newline and has no trailing spaces: keep it so on save.
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+
+  // Bytecode left by the synchronizer and the tests (git-ignored, so search already skips it).
+  "files.exclude": {
+    "**/__pycache__": true
+  }
+}

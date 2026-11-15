@@ -1,0 +1,80 @@
+{
+  // Static site with no build step and no packages: the commands need only Python 3.10+ and Node.js, as in the
+  // workflows (.github/workflows/checks.yaml and projects.yaml).
+  "version": "2.0.0",
+  "tasks": [
+    {
+      // Background task: ready once http.server prints its address, so the debuggers in launch.json can open the
+      // browser.
+      "label": "Serve the site",
+      "type": "process",
+      "command": "python3",
+      "args": ["-m", "http.server", "8000", "--bind", "127.0.0.1"],
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "http.server",
+        "pattern": {
+          "regexp": "^\\b$"
+        },
+        "background": {
+          "activatesOnStart": true,
+          "beginsPattern": "Serving HTTP",
+          "endsPattern": "Serving HTTP"
+        }
+      }
+    },
+    {
+      // The steps of the "Build and tests" workflow, in its order; it stops at the first one that fails.
+      "label": "Checks",
+      "dependsOrder": "sequence",
+      "dependsOn": ["Check JavaScript syntax", "Filter and pagination tests", "Site and synchronizer tests"],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Check JavaScript syntax",
+      "type": "process",
+      "command": "node",
+      "args": ["--check", "script.js"],
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Filter and pagination tests",
+      "type": "process",
+      "command": "node",
+      "args": ["--test", "tests/test_pagination.cjs"],
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      // Offline: the synchronizer tests mock the GitHub API.
+      "label": "Site and synchronizer tests",
+      "type": "process",
+      "command": "python3",
+      "args": ["-m", "unittest", "discover", "-v", "tests"],
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      // Leaves index.html untouched: exit code 1 means the catalogue is out of date, 2 an error.
+      "label": "Sync catalogue (check only)",
+      "type": "process",
+      "command": "python3",
+      "args": ["scripts/sync_projects.py", "--check"],
+      "problemMatcher": []
+    },
+    {
+      // Rewrites only the cards between PROJECTS:START/END and the project total in index.html: curated copy goes in
+      // projects.json. A GITHUB_TOKEN in the environment is optional and only raises the API rate limit.
+      "label": "Sync catalogue (update index.html)",
+      "type": "process",
+      "command": "python3",
+      "args": ["scripts/sync_projects.py"],
+      "problemMatcher": []
+    }
+  ]
+}

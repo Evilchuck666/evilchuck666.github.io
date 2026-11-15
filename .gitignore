@@ -1,2 +1,21 @@
+# Python bytecode left by scripts/sync_projects.py and the tests
 __pycache__/
-_site/
+
+# Pages artifact assembled by the "Sync projects and deploy" workflow (projects.yaml)
+/_site/
+
+# VS Code: only the shared project files are tracked (these and evilchuck666.github.io.code-workspace). Extensions may
+# write other files here, some of them with credentials.
+/.vscode/*
+!/.vscode/extensions.json
+!/.vscode/launch.json
+!/.vscode/settings.json
+!/.vscode/tasks.json
+
+# Personal Claude Code files
+/CLAUDE.local.md
+/.claude/settings.local.json
+
+# Operating system files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    // Python: the tests in tests/ in the Testing view (unittest)
+    "ms-python.python",
+    // Python debugger: "Debug the catalogue sync (--check)" in launch.json
+    "ms-python.debugpy",
+    // Firefox debugger: "Debug the site in Firefox" in launch.json (the Chrome one uses the editor's built-in debugger)
+    "firefox-devtools.vscode-firefox-debug",
+    // .github/workflows/
+    "github.vscode-github-actions"
+  ]
+}

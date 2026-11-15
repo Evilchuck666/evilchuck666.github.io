@@ -1,0 +1,49 @@
+{
+  // The site in a browser, served by the "Serve the site" task (started first; already running, it is used as it is).
+  // The URL uses 127.0.0.1, the address the server binds to.
+  "version": "0.2.0",
+  "configurations": [
+    {
+      // Needs the Firefox Debugger extension. It finds Firefox on its own; to use another binary, set
+      // "firefox.executable" in your user settings rather than here, so this file stays portable.
+      "name": "Debug the site in Firefox",
+      "type": "firefox",
+      "request": "launch",
+      "reAttach": true,
+      "url": "http://127.0.0.1:8000/",
+      "webRoot": "${workspaceFolder}",
+      "preLaunchTask": "Serve the site"
+    },
+    {
+      // The editor's built-in JavaScript debugger, with Google Chrome.
+      "name": "Debug the site in Chrome",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://127.0.0.1:8000/",
+      "webRoot": "${workspaceFolder}",
+      "preLaunchTask": "Serve the site"
+    },
+    {
+      // Runs the filter and pagination tests in this process (node:test runs a test file executed directly). script.js
+      // is loaded with vm.runInNewContext, so its breakpoints don't bind: step into it from the test instead.
+      "name": "Debug the filter and pagination tests",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/tests/test_pagination.cjs",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      // Compares the catalogue with GitHub without touching index.html (exit code 1 means changes are needed).
+      "name": "Debug the catalogue sync (--check)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/scripts/sync_projects.py",
+      "args": ["--check"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ]
+}
